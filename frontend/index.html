@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
+
+    <title>HPad Cross Deposit Bridge</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="assets/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="floating-labels.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="form-signin">
+      <div class="text-center mb-4">
+        <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h1 class="h3 mb-3 font-weight-normal">HPad Cross Deposit Bridge</h1>
+      </div>
+
+      <div class="form-label-group">
+        <input type="number" id="cmcAmount" class="form-control" placeholder="HPad Amount" required autofocus>
+        <label for="cmcAmount">HPad Amount</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="solanaWallet" class="form-control" placeholder="To Wallet" required>
+        <label for="solanaWallet">To Wallet</label>
+      </div>
+      <div class="my-3">
+        <label for="chain-selection">Select Chain:</label>
+        <select class="custom-select custom-select-md" id="chain-selection">
+          <!-- <option value disabled selected>Select A Chain</option> -->
+          <option value="bsc" selected>BSC</option>
+          <option value="harmony">Harmony</option>
+        </select>
+      </div>
+      <div class="checkbox mb-3">
+        <span class=" font-weight-bold ">HPad Balance:</span><span class="ml-2 py-2 px-3 font-weight-bold badge badge-pill badge-primary"
+        style="font-size: inherit; letter-spacing: .05rem!important;" id="balance"></span>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block"  id="connect">Connect Wallet</button>
+      <button class="btn btn-lg btn-primary btn-block d-none"  id="approve">Approve</button>
+      <button class="btn btn-lg btn-primary btn-block d-none"  id="deposit">Crosschain Deposit</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2021</p>
+    </div>
+  </body>
+  <script src="./assets/js/web3.min.js"></script>
+
+  <script>
+    // const web3 = new Web3(window.web3.currentProvider);
+    const web3 = new Web3(Web3.givenProvider)
+  </script>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" ></script>
+    <script src="./assets/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script src="./js/token_abi.js"></script>
+    <script src="./js/cmcBridge_abi.js"></script>
+    <script src="./js/avalanche_bridge_abi.js"></script>
+    <script src="./js/harmony_bridge_abi.js"></script>
+    <script src="./js/okEx_bridge_abi.js"></script>
+    <!-- <script src="./node_modules/@okexchain/javascript-sdk/lib/crypto/index.js"></script> -->
+    <script src="./bundle.js"></script>
+
+</html>
